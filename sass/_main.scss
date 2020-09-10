@@ -1,0 +1,105 @@
+/* start main
+     ========================================================================== */
+
+/* hue, saturation, lightness, alpha*/
+$orange: hsla(45, 91%, 56%, 1);
+$deepOrange: hsla(45, 93%, 38%, 1);
+
+* {
+  color: #424242;
+}
+
+.sidebar {
+  padding: 0 1rem;
+
+  &__actor {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.2rem 0.1rem 0.2rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    background-color: rgba(#a9b1d6, 0.3);
+    border-radius: $border-radius;
+    &--active {
+      background-color: rgba(#a9b1d6, 0.9);
+    }
+  }
+  &__actor:last-child {
+    margin-right: 0;
+  }
+  &__favorites__intro {
+    border-style: dashed;
+    border-color: rgba(#000000, 0.1);
+    background-color: hsla(45, 91%, 91%, 0.9); // // rgba(#000000, 0.1)
+    border-radius: $border-radius;
+    border-width: 1px;
+    padding: 2px;
+  }
+  .favorite-item {
+    padding: 3px;
+    &:hover {
+      background-color: rgba(#000000, 0.1);
+      border-radius: $border-radius;
+      cursor: pointer;
+    }
+    &.fade {
+      transition: opacity 900ms;
+      opacity: 0.3;
+    }
+  }
+}
+
+main .script-item {
+  margin: 0 0 1px 0;
+  padding: 0.5rem 0.5rem;
+  transition: border-color 300ms;
+  border-left: 3px solid rgba(#000000, 0);
+  border-right: 3px solid rgba(#000000, 0);
+  border-radius: $border-radius;
+  &:hover {
+    border-color: black;
+    cursor: pointer;
+  }
+  &::selection {
+    background-color: hsla(45, 91%, 91%, 0.9);
+  }
+  &.item--selected {
+    animation-name: highlight;
+    animation-duration: 200ms;
+    animation-timing-function: ease-out;
+    border-left-color: $orange;
+    border-right-color: $orange;
+  }
+}
+
+@keyframes highlight {
+  0% {
+    background-color: hsla(45, 91%, 91%, 0.9);
+  }
+  100% {
+    background-color: hsla(45, 91%, 91%, 0.5);
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.site-footer p {
+  margin-left: 1rem;
+}
+
+.sidebar__poster {
+  position: relative;
+  background-color: #4e4d51;
+  padding-bottom: 150%;
+  margin-top: 1rem;
+  // float: right;
+  .poster-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: left center;
+  }
+}

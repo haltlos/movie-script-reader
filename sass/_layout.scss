@@ -1,0 +1,141 @@
+$mobile-width: 715px;
+$border-radius: 3px;
+
+// .site-header {
+//   background-color: hsl(0, 0%, 70%);
+//   min-height: 1rem;
+// }
+// .site-footer {
+//   background-color: hsl(0, 0%, 70%);
+// }
+// .search {
+//   background-color: hsl(0, 0%, 50%);
+// }
+
+.page {
+  max-width: 70rem;
+  margin: auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto auto auto 1fr auto;
+  grid-template-columns: minmax(auto, 100vw);
+
+  @media (min-width: $mobile-width + 1px) {
+    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-columns: minmax(auto, 790px) 340px;
+  }
+}
+
+.search {
+  min-height: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  & input {
+    // color: $deepOrange;
+    margin: 0 auto;
+    display: block;
+    width: 98%;
+  }
+  @media (min-width: $mobile-width + 1px) {
+    min-width: 70%;
+    margin-bottom: 0;
+    justify-self: center;
+  }
+}
+
+.sidebar {
+  background-color: hsl(0, 0%, 96%);
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  &__wrapper {
+    position: sticky;
+    top: 20px;
+  }
+  @media (min-width: $mobile-width + 1px) {
+    grid-column: 2 / -1;
+    grid-row: 2 / -2;
+  }
+}
+
+.site-footer {
+  @media (min-width: $mobile-width + 1px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.site-header {
+  @media (min-width: $mobile-width + 1px) {
+    grid-column: 1 / -1;
+  }
+}
+
+main {
+  margin: 0 1rem;
+}
+
+/* grid layout for the script
+-------------------------------------------------------------------------------------------------------- */
+
+.script-item {
+  display: grid;
+  width: 94%;
+  @media (min-width: $mobile-width + 1px) {
+    grid-template-columns: 6rem 1fr;
+  }
+
+  background-color: hsla(247, 36%, 95%, 1);
+  // 247, 36%, 95%, 1
+  &__timestamp {
+    color: grey;
+  }
+  &__type {
+    @media (min-width: $mobile-width + 1px) {
+      grid-row: 1 / 3;
+    }
+  }
+  &.item--alt-2 {
+    // margin-left: auto;
+    background-color: hsla(221, 36%, 90%, 1);
+  }
+  &.item--alt-etc,
+  &.item--alt-etc * {
+    background-color: unset;
+    // color: 0, 0%, 75%, 1;
+  }
+}
+
+/* flex layout for movie posters 
+-------------------------------------------------------------------------------------------------------- */
+
+.intro {
+  // background-color: hsl(33, 40%, 60%);
+  &__images {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: hidden;
+    @media (min-width: $mobile-width + 1px) {
+      width: 94%;
+    }
+    & > div {
+      flex: 1 0 50px;
+      margin-right: 1px;
+      position: relative;
+      padding-bottom: 350px;
+      overflow: hidden;
+      background-color: green;
+      cursor: pointer;
+      &:hover {
+        flex-grow: 5;
+      }
+      & img {
+        // width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        // object-position: center center;
+      }
+    }
+  }
+}

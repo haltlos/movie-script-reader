@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <script defer src="/js/lodash.js"></script>
+    <script defer src="/js/movies.js"></script>
+    <script defer src="/js/script.js"></script>
+    <title>Movie script reader</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header"></header>
+      <section class="intro">
+        <div class="intro__images">
+
+
+      </section>
+      <section class="search">
+        <input
+          type="search"
+          class="search"
+          name="search"
+          placeholder="Search the script"
+          aria-label="Search the script"
+          size="30"
+          minlength="3"
+          maxlength="40"
+        />
+      </section>
+      <section class="sidebar">
+        <div class="sidebar__poster"></div>
+        <div class="sidebar__wrapper">
+          <h3 class="sidebar__actors__header">Actors</h3>
+          <div class="sidebar__actors__content"></div>
+          <h3 class="sidebar__favorites__header">Favorite scenes</h3>
+          <p class="sidebar__favorites__intro">
+            Select any paragraphs from the movie script to save your favorite scenes.
+          </p>
+          <div class="sidebar__favorites__content">
+          </div>
+          <div class="note"><p>Der Austausch der Movie Skripte (nach Klick auf einen Titel) wurde nach der Präsentation noch programmiert, funktioniert exemplarisch aber nur für die Filme "Collateral" und "Jerry Maguire".</p></div>
+        </div>
+      </section>
+      <main>
+        <h2 class="h2">Movie script from <cite>Collateral</cite></h2>
+        <div class="script-container">
+          <p data-id="" class="script-item">
+            <time class="script-item__timestamp" datetime="00:00:05">00:00:05</time>
+            <b class="script-item__type">Tom Cruise</b>
+
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut fugiat,
+            sunt, illum, tenetur quos vitae eveniet rerum impedit recusandae
+            perferendis natus. Iusto fugit laboriosam voluptatum doloremque excepturi
+            fugiat commodi culpa atque et. Explicabo reprehenderit deserunt, vel quae
+            beatae neque quibusdam repudiandae velit. Vero quod cum id. Nam minus
+            laboriosam esse!
+          </p>
+        </div>
+      </main>
+      <footer class="site-footer">
+        <p>Created 2019-10-31 by Alexander Schneider, alex@schneider.fastmail.net</p>
+      </footer>
+    </div>
+  </body>
+</html>
